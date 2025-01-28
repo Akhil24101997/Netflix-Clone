@@ -1,0 +1,355 @@
+@import url('https://fonts.googleapis.com/css2?family=Martel+Sans:wght@600&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", serif;
+}
+
+body {
+    background-color: black;
+}
+
+.main {
+    background-image: url("assests/photo/bg.jpg");
+    height: 80vh;
+    position: relative;
+    /* position relative kiya parent ko taki child ko 
+    uskeabsolute m adjust kr ske*/
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* background-size: 100vw; */
+    /* color: pink; yeha rkha par wriiten content
+    hume bich m chaiye toh eske bhi bahar
+    krdo aur ek naye div m daal do\; */
+}
+
+.main .box {
+    /* eska estmal kiya taki eska parent ko
+    todha blackish opacity de ske*/
+    height: 80vh;
+    width: 100%;
+    opacity: 0.6;
+    background-color: black;
+    position: absolute;
+    /* position absolute kiya parent ko taki child()
+    ko uske relative m adjust kr ske*/
+    top: 0;
+    /* color: pink; yeha pe jab rkha tha toh written
+    content ek dam top m aa rha tha , eshi liye uske
+    baahr kr diya i.e., main div jo ki parent div hai eska*/
+}
+
+nav {
+    max-width: 60vw;
+    /* max width se maxium width decide ho gai aur
+    margin auto se nav bar middle m ata hai */
+    margin: auto;
+    display: flex;
+    /* justify-content: center; */
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    /* background-color: blue; */
+    /* gap:10px; */
+}
+
+nav img {
+    width: 110px;
+    position: relative;
+    /*position relative krte hi aur z-index set
+    krte hi NETFLIX bahar aa gaya */
+    z-index: 10;
+}
+
+nav div {
+    display: flex;
+    position: relative;
+    z-index: 10;
+    gap: 10px
+}
+
+.main .hero {
+    /* height: calc(100%-32px);  Respoviness badh gayi thi esko lagane se chhoti screen m par mere system m invald property hai yeh */
+    height: 90%;
+    /* div ki hieght % m es liye set ki kyuki parent
+    ki heigth set thi */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* yeha tak sara content row wise tha set par hume
+    coloumn wise chaiye , even agr div bhi bana dunga toh 
+    bhi bydefault col wise hoga agr display flex hata diya
+    toh properties bhi hat jayengi such justify and align*/
+    /* solution of abouve comment hai ki flex direction 
+    change krdo*/
+    flex-direction: column;
+    color: white;
+    position: relative;
+    /* relative krte hi parent(.main) 
+    ke respect m aa gaya aur bahar aa gaya
+    humre black color ki layout se */
+    font-family: "Martel Sans", serif;
+    /*Thanks to whatfont chorme extension*/
+    gap: 18px;
+    /*Wriiten conent ke bich m gap aa gaya todha sa*/
+    padding: 0 23px;
+}
+
+.hero> :nth-child(1) {
+    /*> lagne se immediate first child ki baat ho rhi hai */
+    font-size: 48px;
+    font-weight: 800;
+    text-align: center;
+}
+
+.hero> :nth-child(2) {
+    font-size: 24px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.hero> :nth-child(3) {
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+}
+
+/* email aur get started button bahut bada aa rha kyuki nth child(1) ki waza se,
+nput div ka first child hai aur button 2nd child hai */
+
+/* aab niche grey color ki line lani hai */
+.seperation {
+    height: 6px;
+    background-color: rgb(160, 159, 159);
+    opacity: 0.2;
+}
+
+.btn {
+    color: white;
+    padding: 4px 14px;
+    border-radius: 6px;
+    background-color: transparent;
+    border: 2px solid white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.hero-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.tab {
+    background-color: transparent;
+    color: white;
+    padding: 11px 60px 11px 10px;
+    font-size: 10px;
+    border-radius: 6px;
+    font-weight: 800;
+    border: 2px solid white;
+}
+
+.rd-btn {
+    background-color: red;
+    font-weight: 600;
+    border-radius: 6px;
+}
+
+.rd-btn1 {
+    padding: 4px 15px;
+    /* font-size: 10px; */
+}
+
+.rd-btn2 {
+    padding: 6px 18px;
+    font-size: 16px;
+}
+
+.first {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+    /* max-width: 60vw; */
+    /* margin: auto; */
+    color: white;
+}
+
+@media (max-width: 675px){
+    .first {
+        flex-wrap: wrap;
+        
+    }
+
+}
+
+
+.text {
+    width: auto;
+    flex: 1;
+/* Ensures it takes up space proportionally */
+}
+
+
+
+.secImg {
+    position: relative;
+    /* Allows positioning of video over image */
+
+    flex: 0 1 auto;
+    width: 500px;
+    /* Ensures it takes up space proportionally */
+    /* max-width: 100vw; */
+    /* Restricts the maximum width */
+    aspect-ratio: 16/9;
+    /* Maintains aspect ratio for the container */
+    /* overflow: hidden; */
+    /* Ensures the content doesn't spill out */
+}
+
+
+
+
+.secImg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ensures the image covers the container */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    /* Places the image below the video */
+}
+
+.secImg video {
+    position: absolute;
+    top: 44%;
+    left: 50%;
+    width: 60%;
+    /* Adjusts the video size */
+    height: auto;
+    transform: translate(-50%, -50%);
+    /* Centers the video within the image */
+    z-index: 2;
+    /* Places the video above the image */
+    pointer-events: none;
+    /* Ensures video doesn't interfere with clicks */
+}
+
+.first>div {
+    display: flex;
+    flex-direction: column;
+}
+
+.first>div :nth-child(1) {
+    font-size: 36px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.first>div :nth-child(2) {
+    font-size: 20px;
+    font-weight: 300;
+    text-align: center;
+}
+
+.faq{
+    color: white;
+    margin-bottom:32px;
+}
+
+.faq h2{
+    font-size: 32px;
+    font-weight: 600;
+    text-align: center;
+    padding: 20px 0 15px 0;
+}
+.faqbox{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(51, 48, 48);
+    border-radius: 4px;
+    padding: 15px;
+    max-width: 50vw;
+    margin: auto;
+    margin: 10px auto;
+    cursor: pointer;
+    transition: all 1s ease-out;
+}
+.faqbox:hover{
+    background-color:rgb(102, 100, 100);
+}
+
+footer {
+    color: white;
+    max-width: 60vw;
+    margin: auto;
+    padding: 20px;
+}
+footer> div{
+    padding: 15px 0;
+}
+.footer{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    max-width: 60vw;
+    margin: auto;
+}
+
+@media (max-width: 675px){
+    .footer {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+.footer a{
+    color: white;
+    font-size: 14px;
+}
+.footer-item{
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+@media (max-width: 675px){
+    nav img {
+        width: 90px;
+    }
+    .btn {
+        padding: 0 7px;
+        border-radius: 3px;
+        border: 1px solid white;
+        font-weight: 300;
+    }
+    .hero> :nth-child(1) {
+        /*> lagne se immediate first child ki baat ho rhi hai */
+        font-size: 40px;
+        font-weight: 600;
+        text-align: center;
+    }
+    
+    .hero> :nth-child(2) {
+        font-size: 20px;
+        font-weight: 300;
+        text-align: center;
+    }
+    
+    .hero> :nth-child(3) {
+        font-size: 16px;
+        font-weight: 300;
+        text-align: center;
+    }
+    nav{
+        max-width: 80vw;
+        gap:20px;
+    }
+}
